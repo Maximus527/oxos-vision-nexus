@@ -2,95 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* OXOS Medical Design System - Professional Dashboard */
 
 @layer base {
   :root {
+    /* Light theme (fallback) */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 239 84% 67%;
+    --radius: 0.75rem;
 
-    --radius: 0.5rem;
+    /* OXOS Brand Colors */
+    --oxos-primary: 239 84% 67%;
+    --oxos-primary-dark: 239 84% 57%;
+    --oxos-secondary: 192 100% 67%;
+    --oxos-accent: 280 100% 70%;
+    --oxos-success: 142 71% 45%;
+    --oxos-warning: 45 93% 58%;
+    --oxos-error: 0 84% 60%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Dashboard specific */
+    --dashboard-bg: 222 47% 11%;
+    --dashboard-card: 222 47% 15%;
+    --dashboard-border: 222 47% 20%;
+    --dashboard-text: 210 40% 98%;
+    --dashboard-text-muted: 215 20% 65%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Glassmorphism */
+    --glass-bg: 222 47% 15% / 0.8;
+    --glass-border: 210 40% 98% / 0.1;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--oxos-primary)), hsl(var(--oxos-secondary)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--dashboard-card)), hsl(222 47% 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--oxos-accent)), hsl(var(--oxos-primary)));
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 239 84% 67%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark theme - OXOS Dashboard */
+    --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 15%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 15%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 20%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
+    --muted: 222 47% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 192 100% 67%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 239 84% 67%;
+    
+    /* Keep sidebar variables for dark theme */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 239 84% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 222 47% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 239 84% 67%;
   }
 }
 
@@ -100,6 +104,74 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-dashboard-bg text-dashboard-text;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--dashboard-bg));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--dashboard-border));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--oxos-primary));
+  }
+}
+
+@layer components {
+  /* Glassmorphism effects */
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* OXOS specific animations */
+  .oxos-glow {
+    box-shadow: 0 0 20px hsl(var(--oxos-primary) / 0.3);
+  }
+
+  .oxos-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  /* Progress bars */
+  .progress-green {
+    background: hsl(var(--oxos-success));
+  }
+
+  .progress-blue {
+    background: hsl(var(--oxos-primary));
+  }
+
+  .progress-purple {
+    background: hsl(var(--oxos-accent));
+  }
+
+  .progress-cyan {
+    background: hsl(var(--oxos-secondary));
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px hsl(var(--oxos-primary) / 0.15);
   }
 }

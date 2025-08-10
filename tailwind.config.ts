@@ -61,6 +61,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// OXOS Brand Colors
+				oxos: {
+					primary: 'hsl(var(--oxos-primary))',
+					'primary-dark': 'hsl(var(--oxos-primary-dark))',
+					secondary: 'hsl(var(--oxos-secondary))',
+					accent: 'hsl(var(--oxos-accent))',
+					success: 'hsl(var(--oxos-success))',
+					warning: 'hsl(var(--oxos-warning))',
+					error: 'hsl(var(--oxos-error))'
+				},
+				// Dashboard specific colors
+				dashboard: {
+					bg: 'hsl(var(--dashboard-bg))',
+					card: 'hsl(var(--dashboard-card))',
+					border: 'hsl(var(--dashboard-border))',
+					text: 'hsl(var(--dashboard-text))',
+					'text-muted': 'hsl(var(--dashboard-text-muted))'
 				}
 			},
 			borderRadius: {
