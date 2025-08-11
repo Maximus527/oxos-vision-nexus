@@ -175,41 +175,28 @@ export default function Dashboard() {
         </div>
 
         {/* Main Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Enhanced Revenue Chart */}
-          <Card className="lg:col-span-2 professional-card animate-slide-up">
-            <CardHeader className="pb-6">
-              <CardTitle className="text-dashboard-text flex items-center gap-3 text-heading text-xl">
-                <div className="w-10 h-10 bg-gradient-to-br from-oxos-primary/20 to-oxos-secondary/20 rounded-lg flex items-center justify-center">
-                  <BarChart3 className="h-5 w-5 text-oxos-primary" />
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Revenue Chart */}
+          <Card className="lg:col-span-2 bg-dashboard-card border-dashboard-border">
+            <CardHeader>
+              <CardTitle className="text-dashboard-text flex items-center gap-2">
+                <BarChart3 className="h-5 w-5 text-oxos-primary" />
                 Revenue Analytics
-                <Badge className="bg-oxos-success/20 text-oxos-success">Live</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="h-80 flex items-end justify-between gap-3 p-4 bg-gradient-to-t from-dashboard-bg/50 to-transparent rounded-lg">
-                {Array.from({ length: 12 }, (_, i) => {
-                  const height = Math.random() * 70 + 30;
-                  return (
-                    <div 
-                      key={i}
-                      className="relative group flex-1 transition-all duration-300 hover:scale-105"
-                    >
-                      <div
-                        className="bg-gradient-to-t from-oxos-primary to-oxos-secondary rounded-t-lg transition-all duration-700 ease-out"
-                        style={{ height: `${height}%` }}
-                      />
-                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-dashboard-card px-2 py-1 rounded text-xs text-dashboard-text border border-dashboard-border">
-                        ${(Math.random() * 10 + 5).toFixed(1)}k
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="h-80 flex items-end justify-between gap-2">
+                {Array.from({ length: 12 }, (_, i) => (
+                  <div 
+                    key={i}
+                    className="bg-gradient-to-t from-oxos-primary to-oxos-secondary rounded-t-lg flex-1"
+                    style={{ height: `${Math.random() * 70 + 30}%` }}
+                  />
+                ))}
               </div>
-              <div className="flex justify-between text-xs text-dashboard-text-muted mt-6 font-mono">
+              <div className="flex justify-between text-xs text-dashboard-text-muted mt-4">
                 {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map(month => (
-                  <span key={month} className="font-medium">{month}</span>
+                  <span key={month}>{month}</span>
                 ))}
               </div>
             </CardContent>
